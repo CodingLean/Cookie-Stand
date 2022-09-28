@@ -1,3 +1,5 @@
+
+
 'use strict';
 let storeHours = [
   '6am',
@@ -19,7 +21,7 @@ let storeHours = [
 // let bodyElem = document.getElementById('body');
 let table = document.createElement('table');
 let storeArray = [];
-
+let myForm = document.getElementById('myForm');
 function StoreLocation(location, minCust, maxCust, avSale) {
   this.location = location;
   this.minCust = minCust;
@@ -125,5 +127,21 @@ const tableDisplayed = function () {
   createFooter();
 };
 tableDisplayed();
+function deleteTfoot(){
+  document.querySelector('table').deleteTFoot();
+}
+function newStoreData(event){
+  event.preventDefault();
+  let location = document.getElementById('location').value;
+  let minHour = Number(document.querySelector('#minCust').value);
+  let maxHour = Number(document.querySelector('#maxCust').value);
+  let avSale = Number(document.querySelector('#avgSale').value);
+  let newStoreLocation = new StoreLocation(location, minHour, maxHour, avSale);
+  newStoreLocation.render();
+  deleteTfoot();
+  createFooter();
+  myForm.reset();
+}
+myForm.addEventListener('submit', newStoreData);
 
 

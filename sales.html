@@ -9,18 +9,20 @@
 <body>
   <main>
 
-<form id="salesForm">
+<form id="myForm">
   <fieldset>
+    <legend>New Store Information</legend>
     <label for="location">location</label>
-    <input id= type="location"text">
+    <input id="location" type ="text" name="location">
     <label for="minCust">Minimum Customer</label>
+    <input id = "minCust" type="number" name="minCust">
     <label for="maxCust">Maximum Customer</label>
-    <label for="avSale">Average Sale</label>
+    <input id = "maxCust" type="number" name="maxCust">
+    <label for="avgSale">Average Sale</label>
+    <input id ="avgSale" type="number" step="any" name="avgSale">
     
-
-
-
   </fieldset>
+  <button type="submit">submit</button>
 </form>
 
   </main>
